@@ -1,12 +1,13 @@
+import express from 'express';
 import {routes} from './0_routes/routes.js';
 
 
-
-
+const app = express();
 const port = 3000;
 
+app.use('/', routes);
 
-const server = routes.listen(port, () =>{
+app.listen(port, () => {
     console.log('This server is listening at port:' + port);
 } );
 
